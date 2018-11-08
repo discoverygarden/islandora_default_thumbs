@@ -18,8 +18,8 @@ function islandora_default_thumbs_prepare_vars_for_page_templates(&$variables) {
     if ($cmodel_thumb_config) {
       $object_url = 'islandora/object/' . $key;
       $thumb_image = theme('image', array('path' => $cmodel_thumb_config['thumb'], 'alt' => $value['title']));
-
-      $value['thumb_link'] = $value['thumbnail'] = l($thumb_image, $object_url, array('html' => TRUE, 'attributes' => array('title' => $value['title'])));
+      $value['thumbnail'] = $thumb_image;
+      $value['thumb_link'] = l($thumb_image, $object_url, array('html' => TRUE, 'attributes' => array('title' => $value['title'])));
       $value['full_config'] = $cmodel_thumb_config;
     }
   }
